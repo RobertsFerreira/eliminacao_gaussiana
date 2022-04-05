@@ -30,7 +30,7 @@ class MatrizOperations:
         pos = matriz.__len__() - 1
         x1 = matriz[pos][pos+1]/matriz[pos][pos]
         results.append(x1)
-        x2 = (matriz[pos-1][pos+1] - (matriz[pos-1][pos] * x1))/matriz[pos][pos]
+        x2 = (matriz[pos-1][pos+1] - (matriz[pos-1][pos] * x1))/matriz[pos-1][pos-1]
         results.append(x2)
         x3 = (matriz[pos-2][pos+1] - ((matriz[pos-2][pos-1] * x2) + (matriz[pos-2][pos] * x1)))/matriz[pos-2][pos-2]
         results.append(x3)
