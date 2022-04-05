@@ -1,3 +1,6 @@
 0 | 1 2 4 1   |  1
 1 | 0 2 1 -3  |  2  
 2 | 0 0 3 3   |  3
+
+link para tentar fazer dinamico o calculo do triangulo superior
+https://www.ime.unicamp.br/~marcia/AlgebraLinear/sistemas_triangulares.html#:~:text=Algoritmo%20(Resolu%C3%A7%C3%A3o%20de%20um%20Sistema,elementos%20da%20diagonal%20n%C3%A3o%20nulos.
