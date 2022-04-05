@@ -1,4 +1,3 @@
-from numpy import mat
 from models.matriz import Matriz
 
 class MatrizOperations:
@@ -29,16 +28,12 @@ class MatrizOperations:
     def triangularSuperior(self, matriz):
         results = []
         pos = matriz.__len__() - 1
-        result = matriz[pos][pos+1]/matriz[pos][pos]
-        results.append(result)
-        for i in range(pos-1, -1, -1):
-            j = 0
-            # print(matriz[i][pos+1])
-            # print(matriz[i][pos])
-            # print(matriz[i][i])
-            b = (matriz[i][pos+1] - (matriz[i][pos] * results[j]))/matriz[i][i]
-            results.append(b)
-            j += 1
+        x1 = matriz[pos][pos+1]/matriz[pos][pos]
+        results.append(x1)
+        x2 = (matriz[pos-1][pos+1] - (matriz[pos-1][pos] * x1))/matriz[pos][pos]
+        results.append(x2)
+        x3 = (matriz[pos-2][pos+1] - ((matriz[pos-2][pos-1] * x2) + (matriz[pos-2][pos] * x1)))/matriz[pos-2][pos-2]
+        results.append(x3)
         results.reverse()
         return results
 
