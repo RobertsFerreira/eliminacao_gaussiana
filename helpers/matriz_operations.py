@@ -15,7 +15,7 @@ class MatrizOperations:
             lenMatriz = matriz.__len__()
             for k in range(0, lenMatriz - 1):
                 for i in range(k+1, lenMatriz):
-                    m = matriz[i][k] / matriz[k][k]
+                    m = matrizBase[i][k] / matrizBase[k][k]
                     for j in range(k, lenMatriz + 1):
                         a = matrizBase[i][j] - (m * matrizBase[k][j])
                         matrizResultante[i][j] = a

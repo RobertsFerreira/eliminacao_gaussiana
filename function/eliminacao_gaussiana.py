@@ -9,10 +9,11 @@ class EliminacaoGaussiana:
         det = 0
         if(type(matriz) is Matriz):
             det = matriz.determinante()
-
             if(self.helper.validateDeterminante(det)):            
                 matrizAmpliada = matriz.matrizAmpliada()
                 result = self.helper.algoritmoGauss(matrizAmpliada)
+                matrizA = Matriz(0, 0) 
+                matrizA.toString(result)
                 solucao = self.helper.triangularSuperior(result)
                 return solucao
         else:
