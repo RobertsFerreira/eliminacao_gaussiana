@@ -6,20 +6,26 @@ def pause():
     exit()
 
 def main():
-    linhas = int(input('Digite o numero de linhas: '))
-    colunas = int(input('Digite o numero de colunas: '))
+    try:
+        linhas = int(input('Digite o numero de linhas: '))
+        colunas = int(input('Digite o numero de colunas: '))
 
-    matriz = Matriz(linhas, colunas)
+        matriz = Matriz(linhas, colunas)
 
-    matriz.toString(matriz.matrizCoeficient)
+        matriz.toString(matriz.matrizCoeficient)
 
-    eliminacao = EliminacaoGaussiana()
+        eliminacao = EliminacaoGaussiana()
 
-    solucao = eliminacao.calculo(matriz)
+        solucao = eliminacao.calculo(matriz)
 
-    Matriz.printList(solucao)
+        Matriz.printList(solucao)
 
-    pause()
+        pause()
+    except KeyboardInterrupt:
+        pause()
+    except Exception as e:
+        print(e)
+        pause()
 
 if __name__ == '__main__':
     main()
