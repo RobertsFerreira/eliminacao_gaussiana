@@ -59,14 +59,15 @@ class Matriz:
 
         for linha in range(matriz.__len__()):
             for coluna in range(matriz[linha].__len__()):
-                print(f"{self.__formatValue__(matriz[linha][coluna])}", end=" ")
+                print(f"{self.__formatValue__(matriz[linha][coluna]):^5}", end=" ")
             print()
         print()
   
     @staticmethod
     def __formatValue__(value):
         if(value < 0):
-            return f'({value})'
+            _value = str(value).replace(".0", "")
+            return f'({_value})'
         else:
             return str(value).replace('.0', '')
 
